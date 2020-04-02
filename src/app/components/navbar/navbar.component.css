@@ -1,0 +1,23 @@
+.bg-navbar {
+    background-color: #34495E !important;
+}
+
+a {
+    cursor: pointer;
+}
+
+.white {
+    color: white !important;
+}
+
+#main .navbar-brand {
+    color: #fff;
+}
+
+#main .navbar-toggler-icon {
+    color: white;
+}
+
+#main .navbar-nav li.nav-item a.nav-link {
+    color: #fff;
+}
