@@ -8,6 +8,7 @@ import { HomeComponent } from './components/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeRouteComponent } from './components/home-route/home-route.component';
 import { ProductoComponent } from './components/producto-bap/producto/producto/producto.component';
+import { RegistrarseComponent } from './components/registrarse/registrarse.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ProductoComponent } from './components/producto-bap/producto/producto/p
     HomeComponent,
     NavbarComponent,
     HomeRouteComponent,
-    ProductoComponent
+    ProductoComponent,
+    RegistrarseComponent
   ],
   imports: [
     BrowserModule,
