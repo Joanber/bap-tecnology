@@ -6,7 +6,8 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { HomeRouteComponent } from './home-route/home-route.component';
+import { HomeRouteComponent } from './components/home-route/home-route.component';
+import { ProductoComponent } from './components/producto-bap/producto/producto/producto.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { HomeRouteComponent } from './home-route/home-route.component';
     LoginComponent,
     HomeComponent,
     NavbarComponent,
-    HomeRouteComponent
+    HomeRouteComponent,
+    ProductoComponent
   ],
   imports: [
     BrowserModule,
