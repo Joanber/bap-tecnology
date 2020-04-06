@@ -14,10 +14,6 @@ a {
     color: #fff;
 }
 
-#main .navbar-toggler-icon {
-    color: white;
-}
-
 #main-nav .navbar-nav {
     margin-top: 0;
 }
@@ -26,23 +22,10 @@ a {
     color: #fff;
 }
 
-#main .navbar-nav>li.nav-item>a.nav-link.active {
-    color: #fff;
-    background: #33d9b2;
+#main .navbar-nav li.nav-item:hover {
+    background: #D68910;
 }
 
-#main .navbar-nav>li.nav-item>a.nav-link.active:active,
-#main .navbar-nav>li.nav-item>a.nav-link.active:focus,
-#main .navbar-nav>li.nav-item>a.nav-link.active:hover {
-    color: #fff;
-    background: black;
-}
-
-#main.navbar-shrink {
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-}
-
-#main.navbar-shrink .navbar-brand {
-    font-size: 1.5em;
+#main a.nav-link:hover {
+    background: #D68910;
 }
