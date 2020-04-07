@@ -16,3 +16,7 @@ button.bg-pri:hover,
 button.bg-pri:focus {
     background-color: #D68910 !important;
 }
+
+bg-tomate {
+    background-color: #D68910 !important;
+}
