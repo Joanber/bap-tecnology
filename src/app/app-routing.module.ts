@@ -4,6 +4,7 @@ import { LoginComponent } from './components/login/login.component';
 import { HomeRouteComponent } from './components/home-route/home-route.component';
 import { ProductoComponent } from './components/producto-bap/producto/producto/producto.component';
 import { ClienteFormComponent } from './components/cliente/cliente-form/cliente-form.component';
+import { HomeComponent } from './components/home/home.component';
 
 
 const routes: Routes = [
@@ -17,11 +18,12 @@ const routes: Routes = [
       {
         path: 'producto',component:ProductoComponent
       },
+      {
+        path:'home', component:HomeComponent
+      },
+      { path: '**', pathMatch: 'full', redirectTo: 'home' }
     
     ]
-  },
-  {
-    path:'**', pathMatch:'full',redirectTo:''
   }
 
 ];

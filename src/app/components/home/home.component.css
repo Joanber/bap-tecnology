@@ -1,0 +1,26 @@
+.carousel-img {
+    width: auto;
+    height: 460px;
+}
+
+@media (max-width: 768px) {
+    .carousel-img {
+        height: 260px;
+    }
+}
+
+.tomate {
+    color: #D68910 !important
+}
+
+.open {
+    font-family: 'Open Sans', sans-serif;
+}
+
+#carousel-control-next-icon:hover {
+    background: #D68910 !important;
+}
+
+.fa-lg {
+    font-size: 50px;
+}
