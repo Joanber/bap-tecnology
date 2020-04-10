@@ -24,3 +24,20 @@
 .fa-lg {
     font-size: 50px;
 }
+
+.card {
+    cursor: pointer;
+}
+
+.card:hover {
+    background: rgb(247, 196, 115) !important;
+}
+
+.card-img-top {
+    width: auto;
+    height: 220px;
+}
+
+button:hover {
+    background-color: white;
+}
