@@ -10,13 +10,10 @@
     background-color: #34495E !important;
 }
 
-a.bg-pri:hover,
-a.bg-pri:focus,
-button.bg-pri:hover,
-button.bg-pri:focus {
+.bg-tomate {
     background-color: #D68910 !important;
 }
 
-bg-tomate {
-    background-color: #D68910 !important;
+.text-white {
+    color: white !important;
 }

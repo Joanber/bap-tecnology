@@ -9,7 +9,9 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeRouteComponent } from './components/home-route/home-route.component';
 import { ProductoComponent } from './components/producto-bap/producto/producto/producto.component';
 import { ClienteFormComponent } from './components/cliente/cliente-form/cliente-form.component';
-import { VerProductoComponent } from './components/producto-bap/producto/ver-producto/ver-producto.component';
+
+import { FooterComponent } from './components/footer/footer.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +21,7 @@ import { VerProductoComponent } from './components/producto-bap/producto/ver-pro
     HomeRouteComponent,
     ProductoComponent,
     ClienteFormComponent,
-    VerProductoComponent
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
