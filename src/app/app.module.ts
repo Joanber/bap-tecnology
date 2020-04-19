@@ -9,8 +9,11 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeRouteComponent } from './components/home-route/home-route.component';
 import { ProductoComponent } from './components/producto-bap/producto/producto/producto.component';
 import { ClienteFormComponent } from './components/cliente/cliente-form/cliente-form.component';
-
+import { HttpClientModule } from '@angular/common/http';
 import { FooterComponent } from './components/footer/footer.component';
+import { ServiciosComponent } from './components/servicios/servicios.component';
+import { ServicioComponent } from './components/servicio/servicio.component';
+import { AddServicioComponent } from './components/add-servicio/add-servicio.component';
 
 @NgModule({
   declarations: [
@@ -22,11 +25,16 @@ import { FooterComponent } from './components/footer/footer.component';
     ProductoComponent,
     ClienteFormComponent,
     FooterComponent,
+    ServiciosComponent,
+    ServicioComponent,
+    AddServicioComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

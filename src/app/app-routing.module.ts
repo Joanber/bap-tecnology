@@ -6,6 +6,9 @@ import { ProductoComponent } from './components/producto-bap/producto/producto/p
 import { ClienteFormComponent } from './components/cliente/cliente-form/cliente-form.component';
 
 import { HomeComponent } from './components/home/home.component';
+import { ServiciosComponent } from './components/servicios/servicios.component';
+import { ServicioComponent } from './components/servicio/servicio.component';
+import { AddServicioComponent } from './components/add-servicio/add-servicio.component';
 
 
 
@@ -22,6 +25,14 @@ const routes: Routes = [
       },
       {
         path:'home', component:HomeComponent
+      },
+      {
+        path:'servicios',component:ServiciosComponent,
+        children :[
+          {
+            path:'addservicio',component:AddServicioComponent
+          }
+        ]
       },
       { path: '**', pathMatch: 'full', redirectTo: 'home' }
     ]
