@@ -14,6 +14,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { ServiciosComponent } from './components/servicios/servicios.component';
 import { ServicioComponent } from './components/servicio/servicio.component';
 import { AddServicioComponent } from './components/add-servicio/add-servicio.component';
+import { VerProductoComponent } from './components/producto-bap/producto/ver-producto/ver-producto.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { AddServicioComponent } from './components/add-servicio/add-servicio.com
     ServiciosComponent,
     ServicioComponent,
     AddServicioComponent,
+    VerProductoComponent,
   ],
   imports: [
     BrowserModule,

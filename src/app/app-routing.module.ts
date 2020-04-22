@@ -4,6 +4,7 @@ import { LoginComponent } from './components/login/login.component';
 import { HomeRouteComponent } from './components/home-route/home-route.component';
 import { ProductoComponent } from './components/producto-bap/producto/producto/producto.component';
 import { ClienteFormComponent } from './components/cliente/cliente-form/cliente-form.component';
+import { VerProductoComponent } from './components/producto-bap/producto/ver-producto/ver-producto.component';
 
 import { HomeComponent } from './components/home/home.component';
 import { ServiciosComponent } from './components/servicios/servicios.component';
@@ -25,6 +26,9 @@ const routes: Routes = [
       },
       {
         path:'home', component:HomeComponent
+      },
+      {
+        path:'verproducto', component:VerProductoComponent
       },
       {
         path:'servicios',component:ServiciosComponent,
