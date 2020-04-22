@@ -12,4 +12,9 @@ export class VerProductoComponent implements OnInit {
   ngOnInit() {
   }
 
+
+  calificacion( event) {
+    console.log(event);
+  }
+
 }

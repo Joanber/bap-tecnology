@@ -1,0 +1,12 @@
+.card:hover {
+    background: rgb(247, 196, 115) !important;
+}
+
+.card-header {
+    background: rgb(247, 196, 115);
+}
+
+.card ul li:hover {
+    color: white;
+    background: rgb(18, 11, 48) !important;
+}
