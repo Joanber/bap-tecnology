@@ -10,3 +10,12 @@
     color: white;
     background: rgb(18, 11, 48) !important;
 }
+
+.card-img-top {
+    width: auto;
+    height: 220px;
+}
+
+button:hover {
+    background-color: white;
+}

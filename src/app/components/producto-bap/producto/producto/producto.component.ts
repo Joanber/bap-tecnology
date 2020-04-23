@@ -31,4 +31,21 @@ export class ProductoComponent implements OnInit {
     });
   }
 
+  filtro(categoria: string) {
+    this.listaProducto = [];
+    this.sp.getProductos().subscribe( prod => {
+      for (const pr of prod) {
+        if (categoria === pr.categoria.nombre) {
+          this.listaProducto.push(pr);
+          console.log(this.listaProducto);
+          if (this.listaProducto == null) {
+            console.log('Error');
+          } else {
+            this.cargando = false;
+          }
+        }
+      }
+    });
+  }
+
 }

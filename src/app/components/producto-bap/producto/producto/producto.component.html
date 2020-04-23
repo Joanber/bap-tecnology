@@ -3,8 +3,11 @@
         <h3 class="text-uppercase font-weight-bold ">Productos</h3>
         <hr class="separador-pri w-100">
     </div>
+    <div class="row justify-content-center" *ngIf="cargando">
+        <img src="../../../assets/img/cargando.gif" class="img-fluid " alt="... ">
+    </div>
     <div class="row">
-        <div class="col-sm-4">
+        <div class="col-sm-4" *ngIf="listaCategoria">
             <form class="form-inline">
                 <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
                 <button class="btn btn-outline-warning my-2 my-sm-0" type="submit"><i class="fa fa-search"></i></button>
@@ -15,45 +18,26 @@
                     Categoría
                 </div>
                 <ul class="list-group" *ngFor="let cat of listaCategoria">
-                    <li class="list-group-item">{{ cat.nombre }}</li>
-                </ul>
-            </div>
-            <br>
-            <div class="card" style="width: 18rem;">
-                <div class="card-header">
-                    Mas Buscado
-                </div>
-                <ul class="list-group">
-                    <li class="list-group-item">Memoria RAM</li>
-                    <li class="list-group-item">Mica</li>
-                    <li class="list-group-item">CPU</li>
-                </ul>
-            </div>
-            <br>
-            <div class="card" style="width: 18rem;">
-                <div class="card-header">
-                    Precios
-                </div>
-                <ul class="list-group">
-                    <li class="list-group-item">Menos de $ 10</li>
-                    <li class="list-group-item">$ 10 a 50</li>
-                    <li class="list-group-item">$ 50 a 90</li>
-                    <li class="list-group-item">Mas de $ 90</li>
+                    <li class="list-group-item" (click)="filtro(cat.nombre)">{{ cat.nombre }}</li>
                 </ul>
             </div>
         </div>
-        <div class="col-sm-8" *ngFor="let prod of listaProducto">
-
-            <div class="card" style="width: 18rem;" *ngFor="let f of prod.fotos_producto">
-                <img [src]="f.foto" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">{{ prod.nombre }}</h5>
-                    <p class="card-title">Catgoría: {{ prod.categoria.nombre }}</p>
-                    <p class="card-text">{{ prod.descripcion }}</p>
-                    <p class="card-title">$ {{ prod.precio }}</p>
-                    <a [routerLink]="['/verproducto', prod.id]" class="btn btn-dark">Ver más</a>
+        <div class="col-sm-8" *ngIf="listaCategoria">
+            <div class="row">
+                <div *ngFor="let prod of listaProducto">
+                    <div class="card mx-3" style="width: 18rem;" *ngFor="let f of prod.fotos_producto">
+                        <img [src]="f.foto" class="card-img-top img-fluid " alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ prod.nombre }}</h5>
+                            <p class="card-title">Catgoría: {{ prod.categoria.nombre }}</p>
+                            <p class="card-text">{{ prod.descripcion }}</p>
+                            <p class="card-title">$ {{ prod.precio }}</p>
+                            <a [routerLink]="['/verproducto', prod.id]" class="btn btn-dark">Ver más</a>
+                        </div>
+                    </div>
                 </div>
             </div>
+
 
         </div>
     </div>
