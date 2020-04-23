@@ -8,10 +8,9 @@
     </div>
     <div class="row" *ngIf="producto">
         <div class="col-sm-4" *ngFor="let f of producto.fotos_producto">
-            <img src="f.foto" class="card-img-top" alt="">
+            <img [src]="f.foto" class="card-img-top" alt="foto">
             <br>
             <br>
-            <button type="button" class="btn btn-success mx-3">Comprar</button>
             <button type="button" routerLink="/producto" class="btn btn-secondary">Regresar</button>
         </div>
         <div class="col-sm-8" style="text-align: center;">
