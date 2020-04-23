@@ -1,6 +1,5 @@
 import { Servicio } from './servicio';
 import { Cliente } from '../cliente/cliente';
-import { Seguimiento } from '../cliente/seguimiento';
 
 export interface ServiciosCliente{
     id?:number
@@ -9,5 +8,4 @@ export interface ServiciosCliente{
     estado?:string
     servicio?:Servicio
     cliente?:Cliente
-    seguimientos?:Seguimiento
 }

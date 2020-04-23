@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Servicio } from 'src/app/models/servicio/servicio';
+import { ServiciosService } from 'src/app/servicios/servicios.service';
 
 @Component({
   selector: 'app-servicios',
@@ -6,10 +8,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./servicios.component.css']
 })
 export class ServiciosComponent implements OnInit {
+  public servicios:Servicio[]=[]
+  public loading:boolean
+  constructor(private srvS:ServiciosService) { 
+    this.loading=true;
+  }
 
-  constructor() { }
+  async ngOnInit() {
+      await this.cargarServicios()
+  }
 
-  ngOnInit() {
+
+  async cargarServicios(){
+    this.servicios= await this.srvS.getServicios();
+    if (this.servicios) {
+      this.loading=false
+    }
   }
 
 }

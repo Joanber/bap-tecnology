@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ServiciosService } from 'src/app/servicios/servicios.service';
 import { Servicio } from 'src/app/models/servicio/servicio';
-import { Observable, Observer } from 'rxjs';
+import { ActivatedRoute } from '@angular/router';
+import { FotosService } from 'src/app/servicios/fotos.service';
+import { FotoServicio } from 'src/app/models/servicio/FotoServicio';
 
 @Component({
   selector: 'app-servicio',
@@ -9,30 +11,42 @@ import { Observable, Observer } from 'rxjs';
   styleUrls: ['./servicio.component.css']
 })
 export class ServicioComponent implements OnInit {
-  public servicios:Servicio[]
   public loading:boolean
-  constructor(private ServiciosService:ServiciosService) { 
-    this.loading=true;
+  public fotos:FotoServicio[]=[]
+  public id:number;
+  public servicio:Servicio={
+    id:0,
+    titulo:"",
+    descripcion:"", 
+    fotos_servicio:[],
+    precio:0,
+    descuento:0,
+    ver_descuento:"",
+    ver_en_web:false
   }
 
-  ngOnInit() {
-    this.getServicios()
-  }
-  getServicios(){
-    this.ServiciosService.getServicios().subscribe(
-      data => {
-        this.servicios=data;
+  constructor(
+    private srvS:ServiciosService,
+    private route:ActivatedRoute,
+    private srvF:FotosService) { 
+      this.loading=true;
+    }
 
-        console.log('Servicios',this.servicios[1].fotos_servicio[0].foto);
-        if(this.servicios===null){
-          console.log('Error en el servidor')
-        }else{
-          this.loading=false
-        }
-      }
-    )
+  async ngOnInit() {
+    const fotos:FotoServicio[]=await this.srvF.getServicios();
+    this.id=this.route.snapshot.params["id"];
+    if(this.id){
+      const servicioDB= await this.srvS.getByid(this.id);
+      this.servicio = servicioDB
+      this.fotos =this.servicio.fotos_servicio
+      this.loading=false
+     console.log("foto",this.fotos);
 
+    }
   }
+
+
+ 
   
 
 

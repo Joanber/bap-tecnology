@@ -35,11 +35,9 @@ const routes: Routes = [
       },
       {
         path:'servicios',component:ServiciosComponent,
-        children :[
-          {
-            path:'addservicio',component:AddServicioComponent
-          }
-        ]
+      },
+      {
+        path:'servicio/:id',component:ServicioComponent
       },
       { path: '**', pathMatch: 'full', redirectTo: 'home' }
     ]
