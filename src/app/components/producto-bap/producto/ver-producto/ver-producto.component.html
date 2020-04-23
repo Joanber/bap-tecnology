@@ -1,19 +1,25 @@
 <div class="container mt-4">
-    <div class="row justify-content-center">
-        <h3 class="text-uppercase font-weight-bold ">Memoria RAM</h3>
+    <div class="row justify-content-center" *ngIf="cargando">
+        <img src="../../../assets/img/cargando.gif" class="img-fluid " alt="... ">
+    </div>
+    <div class="row justify-content-center" *ngIf="producto">
+        <h3 class="text-uppercase font-weight-bold ">{{ producto.nombre }}</h3>
         <hr class="separador-pri w-100">
     </div>
-    <div class="row">
-        <div class="col-sm-4">
-            <img src="../../../../../assets/img/mamoriaRAM.jpg" class="card-img-top" alt="">
+    <div class="row" *ngIf="producto">
+        <div class="col-sm-4" *ngFor="let f of producto.fotos_producto">
+            <img [src]="f.foto" class="card-img-top" alt="">
+            <br>
             <br>
             <button type="button" class="btn btn-success mx-3">Comprar</button>
             <button type="button" routerLink="/producto" class="btn btn-secondary">Regresar</button>
         </div>
-        <div class="col-sm-8">
+        <div class="col-sm-8" style="text-align: center;">
             <h6>Descripción</h6>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias voluptatem consectetur excepturi et modi rem dolorem voluptate nam distinctio expedita fuga architecto deserunt ipsa adipisci quam quia, corrupti non hic?</p>
-            <h6>Precio</h6> $ 13.50
+            <p>{{ producto.descripcion }}</p>
+            <h6>Categoría</h6>
+            <p>{{ producto.categoria.nombre }}</p>
+            <h6>Precio</h6> $ {{ producto.precio }}
             <h6>Calificación</h6>
             <form>
                 <p class="clasificacion">
@@ -40,4 +46,5 @@
             </form>
         </div>
     </div>
+    <hr class="separador-pri w-100 ">
 </div>

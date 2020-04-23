@@ -31,6 +31,9 @@ const routes: Routes = [
         path:'verproducto', component:VerProductoComponent
       },
       {
+        path: 'verproducto/:id', component: VerProductoComponent
+      },
+      {
         path:'servicios',component:ServiciosComponent,
         children :[
           {

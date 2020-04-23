@@ -12,11 +12,10 @@
             <br>
             <div class="card" style="width: 18rem;">
                 <div class="card-header">
-                    Tipo
+                    Categoría
                 </div>
-                <ul class="list-group">
-                    <li class="list-group-item">Accesorios Computadoras</li>
-                    <li class="list-group-item">Accesorios celulares</li>
+                <ul class="list-group" *ngFor="let cat of listaCategoria">
+                    <li class="list-group-item">{{ cat.nombre }}</li>
                 </ul>
             </div>
             <br>
@@ -43,15 +42,20 @@
                 </ul>
             </div>
         </div>
-        <div class="col-sm-8">
-            <div class="card" style="width: 18rem;">
-                <img src="../../../../../assets/img/mamoriaRAM.jpg" class="card-img-top" alt="...">
+        <div class="col-sm-8" *ngFor="let prod of listaProducto">
+
+            <div class="card" style="width: 18rem;" *ngFor="let f of prod.fotos_producto">
+                <img [src]="f.foto" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">Memoria RAM</h5>
-                    <p class="card-text">Memoria RAM de 16Gb</p>
-                    <a routerLink="/verproducto" class="btn btn-dark">Ver más</a>
+                    <h5 class="card-title">{{ prod.nombre }}</h5>
+                    <p class="card-title">Catgoría: {{ prod.categoria.nombre }}</p>
+                    <p class="card-text">{{ prod.descripcion }}</p>
+                    <p class="card-title">$ {{ prod.precio }}</p>
+                    <a [routerLink]="['/verproducto', prod.id]" class="btn btn-dark">Ver más</a>
                 </div>
             </div>
+
         </div>
     </div>
+    <hr class="separador-pri w-100 ">
 </div>
